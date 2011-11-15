@@ -16,6 +16,21 @@
 		F67317BA1472D6A000E468B7 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = F67317B91472D6A000E468B7 /* AppDelegate.rb */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		F67317C31472D77A00E468B7 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.rb";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_NAME)",
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).loc.txt",
+			);
+			script = "cp \"${INPUT_FILE_PATH}\" \"${DERIVED_FILES_DIR}/${INPUT_FILE_NAME}\"\necho \"${INPUT_FILE_PATH}\" > \"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}.loc.txt\"";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXContainerItemProxy section */
 		F67317A71472D6A000E468B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -30,13 +45,14 @@
 		F673179E1472D6A000E468B7 /* MacRubyReload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacRubyReload.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67317A21472D6A000E468B7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F67317A41472D6A000E468B7 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = DEVELOPER_DIR; };
-		F67317AB1472D6A000E468B7 /* MacRubyReload-Info.plist */ = {isa = PBXFileReference; path = "MacRubyReload-Info.plist"; sourceTree = "<group>"; };
+		F67317AB1472D6A000E468B7 /* MacRubyReload-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MacRubyReload-Info.plist"; sourceTree = "<group>"; };
 		F67317AD1472D6A000E468B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F67317AF1472D6A000E468B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F67317B11472D6A000E468B7 /* MacRubyReload-Prefix.pch */ = {isa = PBXFileReference; path = "MacRubyReload-Prefix.pch"; sourceTree = "<group>"; };
+		F67317B11472D6A000E468B7 /* MacRubyReload-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacRubyReload-Prefix.pch"; sourceTree = "<group>"; };
 		F67317B41472D6A000E468B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		F67317B71472D6A000E468B7 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		F67317B91472D6A000E468B7 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		F67317C41472D85C00E468B7 /* ReadMe.markDown */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.markDown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +71,7 @@
 		F67317931472D6A000E468B7 = {
 			isa = PBXGroup;
 			children = (
+				F67317C41472D85C00E468B7 /* ReadMe.markDown */,
 				F67317A91472D6A000E468B7 /* MacRubyReload */,
 				F67317A11472D6A000E468B7 /* Frameworks */,
 				F673179F1472D6A000E468B7 /* Products */,
@@ -145,6 +162,7 @@
 				F673179C1472D6A000E468B7 /* Resources */,
 			);
 			buildRules = (
+				F67317C31472D77A00E468B7 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
